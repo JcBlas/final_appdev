@@ -1,0 +1,11 @@
+<!-- myapp/templates/document_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Document Detail{% endblock %}
+
+{% block content %}
+    <h2>{{ document.title }}</h2>
+    <p>{{ document.content }}</p>
+    <!-- Add more fields as needed -->
+{% endblock %}

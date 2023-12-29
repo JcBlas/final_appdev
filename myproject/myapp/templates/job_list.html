@@ -1,0 +1,22 @@
+<!-- myapp/templates/job_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Job List{% endblock %}
+
+{% block content %}
+    <h2>Job List</h2>
+    <ul>
+        {% for job in jobs %}
+            <li>
+                {{ job.title }} - Salary: {{ job.salary }}
+                {% if job.person %}
+                    - Person: <a href="{% url 'person_detail' pk=job.person.pk %}">{{ job.person.name }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Pagination -->
+    {% include 'pagination.html' with items=jobs %}
+{% endblock %}

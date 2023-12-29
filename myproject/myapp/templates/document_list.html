@@ -1,0 +1,19 @@
+<!-- myapp/templates/document_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Document List{% endblock %}
+
+{% block content %}
+    <h2>Document List</h2>
+    <ul>
+        {% for document in documents %}
+            <li>
+                <a href="{% url 'document_detail' pk=document.pk %}">{{ document.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Include pagination template -->
+    {% include 'pagination.html' with items=documents %}
+{% endblock %}

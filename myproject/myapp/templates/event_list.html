@@ -1,0 +1,29 @@
+<!-- myapp/templates/event_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Event List{% endblock %}
+
+{% block content %}
+    <h2>Event List</h2>
+    <ul>
+        {% for event in events %}
+            <li>
+                {{ event.name }} - Date: {{ event.date }} - Time: {{ event.time }}
+                {% if event.person.all %}
+                    - Persons:
+                    <ul>
+                        {% for person in event.person.all %}
+                            <li><a href="{% url 'person_detail' pk=person.pk %}">{{ person.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    - No associated persons
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Pagination -->
+    {% include 'pagination.html' with items=events %}
+{% endblock %}

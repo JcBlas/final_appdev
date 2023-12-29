@@ -1,0 +1,17 @@
+<!-- myapp/templates/person_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Person List{% endblock %}
+
+{% block content %}
+    <h2>Person List</h2>
+    <ul>
+        {% for person in persons %}
+            <li>{{ person.name }} - {{ person.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Include pagination template -->
+    {% include 'pagination.html' with items=persons %}
+{% endblock %}

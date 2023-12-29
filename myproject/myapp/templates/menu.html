@@ -1,0 +1,28 @@
+<!-- myapp/templates/base.html -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'default_view' %}">My Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'person_list' %}">Persons</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'job_list' %}">Jobs</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'event_list' %}">Events</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'address_list' %}">Address</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'document_list' %}">Documents</a>
+            </li>
+            <!-- Add additional menu items as needed -->
+        </ul>
+    </div>
+</nav>
