@@ -3,6 +3,7 @@ from django.views.generic import ListView, View
 from .models import Person, Address, Document, Event, Job
 # Create your views here.
 
+
 class PersonListView(ListView):
     model = Person
     template_name = 'person_list.html'
